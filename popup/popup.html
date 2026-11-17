@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeetCode C# Formatter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <img src="../icons/icon32.png" alt="C# Logo" class="logo">
+        <div>
+          <h1 class="title">LeetCode C# Formatter</h1>
+          <span class="version">v1.0.0 • Manifest V3</span>
+        </div>
+      </div>
+      <div id="status-badge" class="badge badge-inactive">Checking...</div>
+    </header>
+
+    <!-- Primary Action -->
+    <div class="action-card">
+      <button id="format-now-btn" class="primary-btn" disabled>
+        <span class="btn-icon">⚡</span>
+        <span>Format Current Code</span>
+      </button>
+      <div class="shortcut-hint">
+        Shortcut: <kbd id="shortcut-kbd">Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>
+      </div>
+    </div>
+
+    <!-- Configuration Options -->
+    <section class="settings-section">
+      <h2 class="section-title">Formatter Preferences</h2>
+
+      <!-- Indentation Size -->
+      <div class="setting-row">
+        <label for="indent-size" class="setting-label">Indentation</label>
+        <select id="indent-size" class="select-input">
+          <option value="4-space">4 Spaces (Standard C#)</option>
+          <option value="2-space">2 Spaces</option>
+          <option value="tab">Tabs</option>
+        </select>
+      </div>
+
+      <!-- Brace Style -->
+      <div class="setting-row">
+        <label for="brace-style" class="setting-label">Brace Style</label>
+        <select id="brace-style" class="select-input">
+          <option value="Allman">Allman (New line)</option>
+          <option value="KR">K&amp;R (Same line)</option>
+        </select>
+      </div>
+
+      <!-- Blank Lines -->
+      <div class="setting-row">
+        <label for="max-blank-lines" class="setting-label">Max Consecutive Blank Lines</label>
+        <select id="max-blank-lines" class="select-input">
+          <option value="1">1 blank line</option>
+          <option value="2">2 blank lines</option>
+        </select>
+      </div>
+
+      <!-- Operator Spacing -->
+      <div class="setting-row toggle-row">
+        <label for="space-operators" class="setting-label">Spaces around operators</label>
+        <input type="checkbox" id="space-operators" class="toggle-checkbox" checked>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-tip">100% Client-Side • Zero Network • Safe AST Verification</div>
+      <button id="reset-defaults" class="text-btn">Reset Defaults</button>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

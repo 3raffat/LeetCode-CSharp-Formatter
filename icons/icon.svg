@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7B2CBF"/>
+      <stop offset="100%" stop-color="#4A148C"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#bgGrad)"/>
+  <rect width="124" height="124" x="2" y="2" rx="26" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <!-- C -->
+  <path d="M 52 38 C 30 38 24 50 24 64 C 24 78 30 90 52 90 C 58 90 62 86 64 82" 
+        fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+  <!-- # -->
+  <path d="M 76 34 L 72 94 M 94 34 L 90 94 M 64 50 L 104 46 M 62 76 L 102 72" 
+        fill="none" stroke="#FFA116" stroke-width="7" stroke-linecap="round"/>
+</svg>

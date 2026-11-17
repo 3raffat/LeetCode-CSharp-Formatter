@@ -1,0 +1,74 @@
+{
+  "manifest_version": 3,
+  "name": "LeetCode C# Formatter",
+  "version": "1.0.0",
+  "description": "Production-quality C# code formatter for the LeetCode online code editor adhering to Microsoft C# standards.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "https://leetcode.cn/*"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "LeetCode C# Formatter"
+  },
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/*",
+        "https://leetcode.cn/*"
+      ],
+      "js": [
+        "content/pageBridge.js"
+      ],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://leetcode.com/*",
+        "https://leetcode.cn/*"
+      ],
+      "js": [
+        "formatter/csharpLexer.js",
+        "formatter/safetyValidator.js",
+        "formatter/csharpFormatter.js",
+        "formatter/index.js",
+        "content/editorDetector.js",
+        "content/uiManager.js",
+        "content/content.js"
+      ],
+      "css": [
+        "styles/content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "format-csharp": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+I",
+        "mac": "Command+Shift+I"
+      },
+      "description": "Format current C# code in LeetCode"
+    }
+  }
+}

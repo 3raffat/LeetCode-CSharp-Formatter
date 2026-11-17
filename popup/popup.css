@@ -1,0 +1,239 @@
+/* LeetCode C# Formatter - Popup CSS */
+
+:root {
+  --bg-color: #1a1a1a;
+  --card-bg: #262626;
+  --border-color: #383838;
+  --text-main: #eff1f6;
+  --text-muted: #8a8a8e;
+  --csharp-purple: #9b59b6;
+  --csharp-purple-hover: #8e44ad;
+  --accent-green: #22c55e;
+  --accent-amber: #f59e0b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 320px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-size: 13px;
+  line-height: 1.4;
+  user-select: none;
+}
+
+.popup-container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.version {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 7px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-active {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: var(--accent-green);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.badge-inactive {
+  background-color: rgba(138, 138, 142, 0.15);
+  color: var(--text-muted);
+  border: 1px solid rgba(138, 138, 142, 0.25);
+}
+
+.badge-csharp {
+  background-color: rgba(155, 89, 182, 0.2);
+  color: #bb86fc;
+  border: 1px solid rgba(155, 89, 182, 0.4);
+}
+
+/* Action Card */
+.action-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.primary-btn {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--csharp-purple);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.primary-btn:not(:disabled):hover {
+  background-color: var(--csharp-purple-hover);
+  box-shadow: 0 0 12px rgba(155, 89, 182, 0.4);
+}
+
+.primary-btn:disabled {
+  background-color: #333333;
+  color: #777777;
+  cursor: not-allowed;
+}
+
+.btn-icon {
+  font-size: 14px;
+}
+
+.shortcut-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+kbd {
+  background-color: #383838;
+  color: var(--text-main);
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-family: inherit;
+  border: 1px solid #4a4a4a;
+}
+
+/* Settings Section */
+.settings-section {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.setting-label {
+  font-size: 12px;
+  color: var(--text-main);
+}
+
+.select-input {
+  background-color: #1a1a1a;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  outline: none;
+  cursor: pointer;
+}
+
+.select-input:focus {
+  border-color: var(--csharp-purple);
+}
+
+.toggle-row {
+  padding-top: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.toggle-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--csharp-purple);
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-tip {
+  font-size: 10px;
+  color: #666666;
+  text-align: center;
+}
+
+.text-btn {
+  background: none;
+  border: none;
+  color: #888888;
+  font-size: 11px;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.15s ease;
+}
+
+.text-btn:hover {
+  color: var(--text-main);
+}
